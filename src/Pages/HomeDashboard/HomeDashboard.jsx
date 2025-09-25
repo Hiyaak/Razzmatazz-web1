@@ -51,6 +51,7 @@ const HomeDashboard = () => {
       ) : (
         <p className='text-center text-lg'>Loading images...</p>
       )}
+      <h1>about razmatazz</h1>
     </div>
   )
 }
