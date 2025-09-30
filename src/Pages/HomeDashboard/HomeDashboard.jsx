@@ -150,7 +150,7 @@ const HomeDashboard = () => {
                   className="w-full object-cover rounded-lg transition-all duration-700"
                 />
 
-                {/* Left Arrow */}
+              
                 <button
                   onClick={prevSlide}
                   className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2"
@@ -158,7 +158,7 @@ const HomeDashboard = () => {
                   <img src={left_arrow} alt="Prev" className="w-6 h-6" />
                 </button>
 
-                {/* Right Arrow */}
+         
                 <button
                   onClick={nextSlide}
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2"
@@ -166,7 +166,7 @@ const HomeDashboard = () => {
                   <img src={right_arrow} alt="Next" className="w-6 h-6" />
                 </button>
 
-                {/* Dots */}
+                
                 <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
                   {images.map((_, index) => (
                     <span
