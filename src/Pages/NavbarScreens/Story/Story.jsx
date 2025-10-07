@@ -67,7 +67,7 @@ const Story = () => {
 
                     {/* ✅ Designation always shows under name */}
                     <h3 className="text-lg sm:text-xl font-medium mb-6 text-gray-300">
-                      {story.designation || 'Managing Partner'}
+                      {story.designataion || 'Managing Partner'}
                     </h3>
 
                     {story.description && (
