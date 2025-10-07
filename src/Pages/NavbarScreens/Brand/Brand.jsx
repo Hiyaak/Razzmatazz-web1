@@ -4,10 +4,12 @@ import ApiService, { ImagePath } from '../../../Services/Apiservice'
 
 const Brand = () => {
   const navigate = useNavigate()
+  const API_URL = import.meta.env.VITE_API_URL
   const location = useLocation()
   const prevdata = location.state
   const [locations, setLocations] = useState([])
-  //   console.log('brandId', prevdata._id)
+  const [aggregators, setAggregators] = useState([])
+  console.log('brandId', prevdata._id)
 
   const brandColors = {
     'Oak and Smoke': 'bg-yellow-200',
@@ -41,8 +43,25 @@ const Brand = () => {
     }
   }
 
+  const getAggregators = async () => {
+    try {
+      const payload = { brandId: prevdata._id }
+      const { data } = await ApiService.post('/getAggregatorByBrandId', payload)
+
+      if (data.status && data.aggregators) {
+        setAggregators(data.aggregators)
+        console.log('aggregator data', data.aggregators)
+      } else {
+        console.log('No aggregators found')
+      }
+    } catch (error) {
+      console.log('Error fetching aggregators:', error)
+    }
+  }
+
   useEffect(() => {
     getLocations()
+    getAggregators()
   }, [])
 
   return (
@@ -77,7 +96,9 @@ const Brand = () => {
         <div className='flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-4'>
           {prevdata.brandName === 'Kings of Maillard' && (
             <a
-              href='#bookTable'
+              href='http://13.126.81.242/kingsreservation/'
+              target='_blank'
+              rel='noopener noreferrer'
               className='px-4 py-3 w-60 text-center bg-purple-950 text-white rounded border-2 border-purple-950 font-semibold hover:bg-white hover:text-purple-950 transition'
             >
               Book Table
@@ -132,6 +153,38 @@ const Brand = () => {
                 </div>
               ))}
             </div>
+          )}
+        </div>
+      </div>
+
+      {/*  Aggregator Section */}
+      <div className=''>
+        <span className='flex items-center justify-center py-3 text-3xl sm:text-4xl md:text-[45px] border-b border-black bg-[#f1f1ec] font-semibold'>
+          Aggregators
+        </span>
+
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center items-center bg-[#f1f1ec] py-4 px-5 md:px-10'>
+          {aggregators.length > 0 ? (
+            aggregators.map(aggregator => (
+              <div
+                className='text-center cursor-pointer overflow-hidden w-full max-w-[300px] font-bold'
+                key={aggregator._id}
+              >
+                <img
+                  src={`${ImagePath}${aggregator.brand_img}`}
+                  alt={aggregator.name}
+                  onClick={() => window.open(aggregator.url, '_blank')}
+                  className='w-full h-[180px] mb-2 object-cover rounded-md transition-transform duration-300 hover:scale-105'
+                />
+                <h5 className='font-bold text-lg md:text-xl'>
+                  {aggregator.name}
+                </h5>
+              </div>
+            ))
+          ) : (
+            <p className='col-span-full text-center text-gray-500'>
+              No aggregators found. We are adding them soon!
+            </p>
           )}
         </div>
       </div>
