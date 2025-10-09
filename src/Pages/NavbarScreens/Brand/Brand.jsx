@@ -82,7 +82,7 @@ const Brand = () => {
         <img
           src={`${ImagePath}${prevdata.brand_img}`}
           alt={prevdata.brandName}
-          className='w-full h-[50vh] sm:h-[50vh] md:h-[90vh] object-cover'
+          className='w-full h-[50vh] sm:h-[50vh] md:h-[90vh] object-fill'
         />
         <div className='absolute inset-0 bg-black/30'></div>
         <h1 className='absolute inset-0 flex items-center justify-center text-3xl sm:text-4xl md:text-6xl font-bold text-white text-center px-4'>
@@ -125,7 +125,7 @@ const Brand = () => {
 
       {/* Location Section — hidden for Kings of Maillard */}
       {prevdata.brandName !== 'Kings of Maillard' && (
-        <div className='bg-[#08a1c0] w-full py-10 px-6'>
+        <div className='bg-[#97282D] w-full py-10 px-6'>
           <div className='container mx-auto'>
             <h2 className='text-3xl sm:text-4xl font-bold text-white text-left mb-12'>
               LOCATIONS
@@ -142,7 +142,7 @@ const Brand = () => {
                     <img
                       src={`${ImagePath}${loc.loc_image}`}
                       alt={loc.locname}
-                      className='w-full h-96 object-cover'
+                      className='w-full h-80 object-fill'
                     />
                     <div className='pt-5 pb-5 pr-5 pl-0 text-left'>
                       <h3 className='text-2xl font-medium mb-3 text-white leading-none'>
@@ -185,7 +185,7 @@ const Brand = () => {
                       src={`${ImagePath}${aggregator.brand_img}`}
                       alt={aggregator.name}
                       onClick={() => window.open(aggregator.url, '_blank')}
-                      className='w-full h-[180px] mb-2 object-cover rounded-md transition-transform duration-300 hover:scale-105'
+                      className='w-full h-[180px] mb-2 object-fill rounded-md transition-transform duration-300 hover:scale-105'
                     />
                     <h5 className='font-bold text-lg md:text-xl'>
                       {aggregator.name}

@@ -102,7 +102,7 @@ const Concept = () => {
           <img
             src={`${ImagePath}${images[currentIndex].image[0]}`}
             alt={`Slide ${currentIndex + 1}`}
-            className='w-full h-full object-cover transition-all duration-700'
+            className='w-full h-full object-fill transition-all duration-700'
           />
         ) : (
           <p className='text-center text-lg mt-[25vh] sm:mt-[35vh] md:mt-[40vh]'>
@@ -186,7 +186,7 @@ const Concept = () => {
               src={`${ImagePath}${brand.brand_img[0]}`}
               alt={brand.brandName}
               onClick={() => handleImgClick(brand)}
-              className='w-full h-[180px] mb-2 object-cover rounded-md transition-transform duration-300 hover:scale-105'
+              className='w-full h-[180px] mb-2 object-fill rounded-md transition-transform duration-300 hover:scale-105'
             />
             <h5 className='font-bold text-lg md:text-xl'>{brand.brandName}</h5>
           </div>

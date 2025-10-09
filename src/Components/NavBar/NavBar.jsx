@@ -17,15 +17,15 @@ const NavBar = () => {
   ]
 
   return (
-    <nav className="w-full bg-white">
+    <nav className='w-full bg-white'>
       {/* Top Navbar */}
-      <div className="h-[10vh] container mx-auto flex items-center justify-between px-6">
+      <div className='h-[10vh] container mx-auto flex items-center justify-between px-6'>
         {/* Left Menu - Desktop */}
-        <ul className="hidden md:flex space-x-8 order-1">
-          {navItems.slice(0, 3).map((item) => (
+        <ul className='hidden md:flex space-x-8 order-1'>
+          {navItems.slice(0, 3).map(item => (
             <li
               key={item.label}
-              className="font-bold text-black cursor-pointer hover:underline text-lg"
+              className='font-bold text-black cursor-pointer hover:underline text-lg'
               onClick={() => navigate(item.path)}
             >
               {item.label}
@@ -35,22 +35,18 @@ const NavBar = () => {
 
         {/* Logo - Center */}
         <div
-          className="order-2 flex-shrink-0 cursor-pointer"
+          className='order-2 flex-shrink-0 cursor-pointer'
           onClick={() => navigate('/')}
         >
-          <img
-            src={logo}
-            alt="Logo"
-            className="w-32 md:w-56 lg:w-60 mx-auto"
-          />
+          <img src={logo} alt='Logo' className='w-32 md:w-56 lg:w-60 mx-auto' />
         </div>
 
         {/* Right Menu - Desktop */}
-        <ul className="hidden md:flex space-x-8 order-3">
-          {navItems.slice(3).map((item) => (
+        <ul className='hidden md:flex space-x-8 order-3'>
+          {navItems.slice(3).map(item => (
             <li
               key={item.label}
-              className="font-bold text-black cursor-pointer hover:underline text-lg"
+              className='font-bold text-black cursor-pointer hover:underline text-lg'
               onClick={() => navigate(item.path)}
             >
               {item.label}
@@ -59,15 +55,15 @@ const NavBar = () => {
         </ul>
 
         {/* Hamburger - Mobile (Right) */}
-        <div className="md:hidden order-3">
+        <div className='md:hidden order-3'>
           {isOpen ? (
             <FiX
-              className="w-7 h-7 cursor-pointer"
+              className='w-7 h-7 cursor-pointer'
               onClick={() => setIsOpen(false)}
             />
           ) : (
             <FiMenu
-              className="w-7 h-7 cursor-pointer"
+              className='w-7 h-7 cursor-pointer'
               onClick={() => setIsOpen(true)}
             />
           )}
@@ -76,12 +72,12 @@ const NavBar = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <ul className="flex flex-col px-6 py-4 space-y-4 text-center font-semibold">
-            {navItems.map((item) => (
+        <div className='md:hidden bg-white border-t border-gray-200'>
+          <ul className='flex flex-col px-6 py-4 space-y-4 text-center font-semibold'>
+            {navItems.map(item => (
               <li
                 key={item.label}
-                className="cursor-pointer text-gray-600 hover:text-black transition"
+                className='cursor-pointer text-gray-600 hover:text-black transition'
                 onClick={() => {
                   navigate(item.path)
                   setIsOpen(false) // close menu after click
@@ -98,4 +94,3 @@ const NavBar = () => {
 }
 
 export default NavBar
-
