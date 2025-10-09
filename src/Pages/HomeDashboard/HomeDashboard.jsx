@@ -99,7 +99,7 @@ const HomeDashboard = () => {
           <img
             src={`${ImagePath}${images[currentIndex].image[0]}`}
             alt={`Slide ${currentIndex + 1}`}
-            className='w-full h-full object-cover transition-all duration-700'
+            className='w-full h-full object-fill transition-all duration-700'
           />
         ) : (
           <p className='text-center text-lg mt-[25vh] sm:mt-[35vh] md:mt-[40vh]'>
@@ -141,10 +141,10 @@ const HomeDashboard = () => {
               src={
                 aboutUs.length > 0 && aboutUs[0].image.length > 0
                   ? `${ImagePath}${aboutUs[0].image[0]}`
-                  : About_Img
+                  : ''
               }
               alt='About Razmatazz'
-              className='w-full h-auto rounded-lg shadow-lg object-cover'
+              className='w-full h-auto rounded-lg shadow-lg object-fill'
             />
           </div>
         </div>
@@ -171,7 +171,7 @@ const HomeDashboard = () => {
                   <img
                     src={`${ImagePath}${currentStory.story_images[0]}`}
                     alt={currentStory.name}
-                    className='w-full h-full object-cover rounded-lg'
+                    className='w-full h-[250px] md:h-[350px] object-fill rounded-lg'
                   />
                 </div>
               )}
@@ -201,7 +201,7 @@ const HomeDashboard = () => {
         <img
           src={giftcardimg}
           alt='Gift Card'
-          className='w-full h-[300px] object-cover'
+          className='w-full h-[300px] object-fill'
         />
       </div>
       <Footer />
