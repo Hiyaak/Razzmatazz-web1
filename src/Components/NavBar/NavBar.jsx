@@ -10,10 +10,10 @@ const NavBar = () => {
   const navItems = [
     { label: 'Concept', path: '/concept' },
     { label: 'Story', path: '/story' },
-    { label: 'Gift Card', path: '/gift-card' },
-    { label: 'Private Events', path: '/events' },
-    { label: 'Career', path: '/career' },
-    { label: 'Contact', path: '/contact' }
+    { label: 'Contact', path: '/contact' },
+    { label: 'Gift Card' },
+    { label: 'Private Events' },
+    { label: 'Career' }
   ]
 
   return (
