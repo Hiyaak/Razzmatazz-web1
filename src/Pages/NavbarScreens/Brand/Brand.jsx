@@ -152,8 +152,8 @@ const Brand = () => {
                         {loc.description}
                       </p>
                       <a
-                        href={loc.url} 
-                        target='_blank' 
+                        href={loc.url}
+                        target='_blank'
                         rel='noopener noreferrer'
                         className='inline-block text-white font-semibold tracking-widest hover:underline text-right'
                       >
