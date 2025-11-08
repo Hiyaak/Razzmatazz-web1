@@ -148,7 +148,10 @@ const Brand = () => {
                       <h3 className='text-2xl font-medium mb-3 text-white leading-none'>
                         {loc.locname}
                       </h3>
-                      <p className='text-white mb-4 tracking-wide leading-relaxed'>
+                      <p
+                        title={loc.description}
+                        className='text-white mb-4 tracking-wide leading-relaxed line-clamp-2 overflow-hidden text-ellipsis'
+                      >
                         {loc.description}
                       </p>
                       <a
